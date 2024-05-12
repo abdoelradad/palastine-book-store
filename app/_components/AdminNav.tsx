@@ -8,7 +8,7 @@ import { BiBarChartSquare } from "react-icons/bi";
 import { BiShare } from "react-icons/bi";
 export default function AdminNav() {
   return (
-    <aside className="flex flex-col md:w-[300px]  bg-[#f7f7f7] h-screen shadow-md p-5">
+    <aside className="md:flex flex-col hidden md:w-[300px]  bg-[#f7f7f7] h-screen shadow-md p-5">
       <div>
         {/* header */}
         <div className="flex gap-x-3 border-b py-2">

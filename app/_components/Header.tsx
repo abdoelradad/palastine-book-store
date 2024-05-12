@@ -5,6 +5,8 @@ import React, { useState, useEffect } from "react";
 import { FaUser } from "react-icons/fa";
 import { FaChartSimple } from "react-icons/fa6";
 import NavMobile from "./NavMobile";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 export default function Header() {
   const [active, setActive] = useState(false);
 
@@ -19,6 +21,10 @@ export default function Header() {
       window.removeEventListener("scroll", handleScroll);
     };
   });
+
+  function Noty() {
+    return toast("Comming Soon!");
+  }
 
   return (
     <header
@@ -59,8 +65,9 @@ export default function Header() {
         {/* buttons family */}
         <div className="hidden md:flex items-center gap-x-1 flex-row-reverse">
           <Link
+            onClick={Noty}
             href={"/"}
-            className=" flex items-center gap-x-2 bg-primary text-white px-4 py-2 rounded-lg transition-all duration-200 hover:bg-primary/90"
+            className="flex items-center gap-x-2 bg-primary text-white px-4 py-2 rounded-lg transition-all duration-200 hover:bg-primary/90"
           >
             <FaUser />
             تسجيل الدخول
@@ -82,8 +89,10 @@ export default function Header() {
           height={100}
           className=" object-cover absolute -top-8 left-1/2 -translate-x-1/2"
         />
-
         <NavMobile containerStyles={"md:hidden"} />
+      </div>
+      <div className=" absolute bottom-0 right-0 h-full z-50">
+        <ToastContainer />
       </div>
     </header>
   );
