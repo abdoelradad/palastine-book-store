@@ -9,9 +9,11 @@ const config: Config = {
   theme: {
     extend: {
       backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+        bgHero: "url(/hero.webp)",
+        bgBest: "url(/best.webp)",
+      },
+      colors: {
+        primary: "#58A399",
       },
     },
   },
